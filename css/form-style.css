@@ -1,0 +1,27 @@
+body {
+    padding-top: 20px;
+    background-color: #F5F5F5;
+  }
+  
+  /**
+   * Form control
+   */
+  .form-control {
+    border-radius: 2px;
+    border: none;
+    border-bottom: 1px solid #E0E0E0;
+    box-shadow: 0 1px 5px -2px rgba(0,0,0,.2);
+    
+    &:focus {
+      box-shadow: 0 1px 5px -2px #42A5F5;
+      border-bottom: 1px solid #2196F3;
+    }
+    
+  }
+  
+  .form-group {
+    label {
+      color: #616161;
+    }
+  }
+  
