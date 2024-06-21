@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Postulación - Parte 2</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+    </header>
+    <main>
+        <div class="container bg-light p-5">
+            <h1>Postulación - Parte 2</h1>
+            <form method="post">
+                <fieldset class="border p-4 mt-4">
+                    <legend class="w-auto">Postulación</legend>
+                    <div class="form-group">
+                        <label>¿Postulación individual o en equipo?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="individual" name="postulacion" value="individual" onclick="toggleEquipo(false)" required>
+                            <label class="form-check-label" for="individual">Individual</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="equipo" name="postulacion" value="equipo" onclick="toggleEquipo(true)" required>
+                            <label class="form-check-label" for="equipo">Equipo</label>
+                        </div>
+                    </div>
+                    <div id="equipoFields" class="form-row" style="display: none;">
+                        <div class="form-group col-md-4">
+                            <label for="nombre1">Nombre Integrante 2</label>
+                            <input type="text" class="form-control" id="nombre1" name="nombre1">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="apellidoPaterno1">Apellido Paterno</label>
+                            <input type="text" class="form-control" id="apellidoPaterno1" name="apellidoPaterno1">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="apellidoMaterno1">Apellido Materno</label>
+                            <input type="text" class="form-control" id="apellidoMaterno1" name="apellidoMaterno1">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="nombre2">Nombre Integrante 3</label>
+                            <input type="text" class="form-control" id="nombre2" name="nombre2">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="apellidoPaterno2">Apellido Paterno</label>
+                            <input type="text" class="form-control" id="apellidoPaterno2" name="apellidoPaterno2">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="apellidoMaterno2">Apellido Materno</label>
+                            <input type="text" class="form-control" id="apellidoMaterno2" name="apellidoMaterno2">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="border p-4 mt-4">
+                    <legend class="w-auto">Profesor a Cargo</legend>
+                    <div class="form-group">
+                        <label>¿Tiene profesor a cargo?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="profesorSi" name="profesor" value="si" onclick="toggleProfesor(true)" required>
+                            <label class="form-check-label" for="profesorSi">Sí</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="profesorNo" name="profesor" value="no" onclick="toggleProfesor(false)" required>
+                            <label class="form-check-label" for="profesorNo">No</label>
+                        </div>
+                    </div>
+                    <div id="profesorFields" class="form-row" style="display: none;">
+                        <div class="form-group col-md-4">
+                            <label for="nombreProfesor">Nombre</label>
+                            <input type="text" class="form-control" id="nombreProfesor" name="nombreProfesor">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="apellidoPaternoProfesor">Apellido Paterno</label>
+                            <input type="text" class="form-control" id="apellidoPaternoProfesor" name="apellidoPaternoProfesor">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="apellidoMaternoProfesor">Apellido Materno</label>
+                            <input type="text" class="form-control" id="apellidoMaternoProfesor" name="apellidoMaternoProfesor">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="border p-4 mt-4">
+                    <legend class="w-auto">Conocimientos Previos</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="robotica">Taller de robótica</label>
+                            <select class="form-control" id="robotica" name="robotica" required>
+                                <option value="0">0: Sin conocimiento previo</option>
+                                <option value="1">1: Conocimiento básico o nulo</option>
+                                <option value="2">2: Conocimiento básico</option>
+                                <option value="3">3: Conocimiento intermedio</option>
+                                <option value="4">4: Conocimiento avanzado</option>
+                                <option value="5">5: Experto</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="prototipado">Taller de prototipado</label>
+                            <select class="form-control" id="prototipado" name="prototipado" required>
+                                <option value="0">0: Sin conocimiento previo</option>
+                                <option value="1">1: Conocimiento básico o nulo</option>
+                                <option value="2">2: Conocimiento básico</option>
+                                <option value="3">3: Conocimiento intermedio</option>
+                                <option value="4">4: Conocimiento avanzado</option>
+                                <option value="5">5: Experto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="aplicacionesMoviles">Taller de aplicaciones móviles</label>
+                            <select class="form-control" id="aplicacionesMoviles" name="aplicacionesMoviles" required>
+                                <option value="0">0: Sin conocimiento previo</option>
+                                <option value="1">1: Conocimiento básico o nulo</option>
+                                <option value="2">2: Conocimiento básico</option>
+                                <option value="3">3: Conocimiento intermedio</option>
+                                <option value="4">4: Conocimiento avanzado</option>
+                                <option value="5">5: Experto</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="creatividadEmprendimientoInnovacion">Taller de creatividad, emprendimiento e innovación</label>
+                            <select class="form-control" id="creatividadEmprendimientoInnovacion" name="creatividadEmprendimientoInnovacion" required>
+                                <option value="0">0: Sin conocimiento previo</option>
+                                <option value="1">1: Conocimiento básico o nulo</option>
+                                <option value="2">2: Conocimiento básico</option>
+                                <option value="3">3: Conocimiento intermedio</option>
+                                <option value="4">4: Conocimiento avanzado</option>
+                                <option value="5">5: Experto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="telecomunicaciones">Taller de telecomunicaciones</label>
+                            <select class="form-control" id="telecomunicaciones" name="telecomunicaciones" required>
+                                <option value="0">0: Sin conocimiento previo</option>
+                                <option value="1">1: Conocimiento básico o nulo</option>
+                                <option value="2">2: Conocimiento básico</option>
+                                <option value="3">3: Conocimiento intermedio</option>
+                                <option value="4">4: Conocimiento avanzado</option>
+                                <option value="5">5: Experto</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="border p-4 mt-4">
+                    <legend class="w-auto">Experiencia Previa</legend>
+                    <div class="form-group">
+                        <label>¿Ha participado en algún taller extracurricular?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="extracurricularSi" name="extracurricular" value="si" onclick="toggleExtracurricular(true)" required>
+                            <label class="form-check-label" for="extracurricularSi">Sí</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="extracurricularNo" name="extracurricular" value="no" onclick="toggleExtracurricular(false)" required>
+                            <label class="form-check-label" for="extracurricularNo">No</label>
+                        </div>
+                    </div>
+                    <div id="extracurricularFields" style="display: none;">
+                        <div class="form-group">
+                            <label for="extracurricularTalleres">Seleccione los talleres en los que ha participado:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tallerRobotica" name="talleres[]" value="robotica" onclick="updateSelectedTalleres()">
+                                <label class="form-check-label" for="tallerRobotica">Taller de robótica</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tallerPrototipado" name="talleres[]" value="prototipado" onclick="updateSelectedTalleres()">
+                                <label class="form-check-label" for="tallerPrototipado">Taller de prototipado</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tallerAplicacionesMoviles" name="talleres[]" value="aplicacionesMoviles" onclick="updateSelectedTalleres()">
+                                <label class="form-check-label" for="tallerAplicacionesMoviles">Taller de aplicaciones móviles</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tallerCreatividad" name="talleres[]" value="creatividadEmprendimientoInnovacion" onclick="updateSelectedTalleres()">
+                                <label class="form-check-label" for="tallerCreatividad">Taller de creatividad, emprendimiento e innovación</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tallerTelecomunicaciones" name="talleres[]" value="telecomunicaciones" onclick="updateSelectedTalleres()">
+                                <label class="form-check-label" for="tallerTelecomunicaciones">Taller de telecomunicaciones</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="tallerOtro" name="talleres[]" value="otro" onclick="updateSelectedTalleres()">
+                                <label class="form-check-label" for="tallerOtro">Otro</label>
+                            </div>
+                            <label for="extracurricularOtro" class="mt-2">Si seleccionó "Otro", por favor describa:</label>
+                            <textarea class="form-control" id="extracurricularOtro" name="extracurricularOtro"></textarea>
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="selectedTalleres">Talleres seleccionados:</label>
+                            <ul id="selectedTalleres" class="list-group"></ul>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+
+                <fieldset class="border p-4 mt-4">
+                    <legend class="w-auto">Definición del Problema</legend>
+                    <div class="form-group">
+                        <label>¿Tiene el problema ya definido?</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="problemaDefinidoSi" name="problemaDefinido" value="si" onclick="toggleProblema(true)" required>
+                            <label class="form-check-label" for="problemaDefinidoSi">Sí</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="problemaDefinidoNo" name="problemaDefinido" value="no" onclick="toggleProblema(false)" required>
+                            <label class="form-check-label" for="problemaDefinidoNo">No</label>
+                        </div>
+                    </div>
+                    <div id="problemaFields" class="form-group" style="display: none;">
+                        <label for="descripcionProblema">Describir el problema</label>
+                        <textarea class="form-control" id="descripcionProblema" name="descripcionProblema"></textarea>
+                        <label for="afectados">¿A quiénes les afecta?</label>
+                        <textarea class="form-control" id="afectados" name="afectados"></textarea>
+                        <label for="solucion">¿Cómo piensa solucionar el problema?</label>
+                        <textarea class="form-control" id="solucion" name="solucion"></textarea>
+                    </div>
+                    <div id="noProblemaFields" class="form-group" style="display: none;">
+                        <label for="desafioDesarrolloSostenible">¿Con qué líneas de desafío del desarrollo sostenible se alinea?</label>
+                        <textarea class="form-control" id="desafioDesarrolloSostenible" name="desafioDesarrolloSostenible"></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQ+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script>
+        function toggleEquipo(show) {
+            document.getElementById('equipoFields').style.display = show ? 'block' : 'none';
+        }
+        function toggleProfesor(show) {
+            document.getElementById('profesorFields').style.display = show ? 'block' : 'none';
+        }
+        function toggleExtracurricular(show) {
+            document.getElementById('extracurricularFields').style.display = show ? 'block' : 'none';
+        }
+        function toggleProblema(show) {
+            document.getElementById('problemaFields').style.display = show ? 'block' : 'none';
+            document.getElementById('noProblemaFields').style.display = !show ? 'block' : 'none';
+        }
+    
+        function updateSelectedTalleres() {
+            const checkboxes = document.querySelectorAll('input[name="talleres[]"]:checked');
+            const selectedList = document.getElementById('selectedTalleres');
+            selectedList.innerHTML = ''; // Clear the list
+    
+            checkboxes.forEach((checkbox) => {
+                const listItem = document.createElement('li');
+                listItem.className = 'list-group-item';
+                listItem.textContent = checkbox.nextElementSibling.textContent;
+                selectedList.appendChild(listItem);
+            });
+        }
+    </script>
+    
+</body>
+</html>

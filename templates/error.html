@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Acceso Denegado</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        .center-container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            margin: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            margin: 5px;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-container">
+        <h1>Acceso Denegado</h1>
+        <p>No tienes acceso a esta página.</p>
+        <a href="{{ url_for('formulario1') }}" class="btn btn-primary">Volver al Formulario</a>
+        <a href="https://techtalentusm.cl/" class="btn btn-secondary">Ir a la Página Principal</a>
+    </div>
+</body>
+</html>
